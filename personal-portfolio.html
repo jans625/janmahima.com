@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Portfolio — Jan Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f5f4f0;
+      --bg-alt: #eae8e3;
+      --text: #1a1a1a;
+      --text-light: #3a3a3a;
+      --gray: #8a8a8a;
+      --border: rgba(0,0,0,0.08);
+      --accent: #8a8a8a;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 300;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 56px;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .back-link {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .back-link:hover { color: var(--text); }
+
+    /* Hero */
+    .project-hero {
+      padding: 80px 56px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .project-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 32px;
+    }
+    .project-meta {
+      display: flex;
+      gap: 48px;
+    }
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .meta-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    .meta-value {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+
+    /* Content */
+    .project-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 56px;
+    }
+    .project-content h2 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+    .project-content h3 {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+    .project-content p {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+    .project-content .subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .project-content ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+    .project-content ul li {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--text-light);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+    .project-content ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--gray);
+    }
+
+    /* Image placeholders */
+    .project-images {
+      padding: 0 56px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .project-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--bg-alt);
+      border: 2px dashed rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    footer {
+      padding: 32px 56px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 1000px) {
+      nav, .project-hero, .project-content, .project-images { padding-left: 32px; padding-right: 32px; }
+      .project-meta { flex-wrap: wrap; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Jan Singh</a>
+    <a href="index.html#work" class="back-link">← Back to Portfolio</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="project-tag">Project</div>
+    <h1 class="project-title">Personal Portfolio</h1>
+  </div>
+
+  <div class="project-content">
+    <h2>Personal Portfolio Website</h2>
+    <p class="subtitle">A personal professional website that I built from scratch to showcase my work, skills, and experiences</p>
+
+    <p>Designed and developed a clean, modern, custom, and fully responsive professional portfolio website that efficiently presents my professional background, projects, and contact information to potential clients and employers.</p>
+
+    <h3>Key Features &amp; Contributions</h3>
+    <ul>
+      <li>Built the entire website using HTML and CSS in Visual Studio Code, drawing on the critique and feedback of a close one.</li>
+      <li>Created a multi-page structure that included Home, About, Projects, Contacts, and Interest sections.</li>
+      <li>Implemented a fully responsive design that worked seamlessly across desktop, tablet, and mobile devices.</li>
+      <li>Added smooth scrolling navigation and functional contact cards.</li>
+      <li>Incorporated clean typography and professional colour schemes.</li>
+    </ul>
+
+    <h3>Applications/Software/Technologies Used</h3>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>Visual Studio Code</li>
+      <li>Responsive Design</li>
+      <li>Mobile First Approach</li>
+      <li>GitHub</li>
+    </ul>
+
+    <h3>Outcome</h3>
+    <p>Successfully created a professional web-based presence that clearly communicates my skills and experiences, and made my past projects easily accessible and visually appealing to recruiters and clients. Used my design skills to select specific fonts that complement my personality, and developed my abilities through a clean, maintainable, self-coded solution.</p>
+  </div>
+
+  <div class="project-images">
+    <img src="Assets/Coding_Portfolio_JaniceSingh.png" alt="Personal portfolio website by Janice Singh" style="width:100%; display:block;" />
+  </div>
+
+  <footer>© 2026 JMS</footer>
+
+</body>
+</html>
